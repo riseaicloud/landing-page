@@ -23,7 +23,7 @@ const Hero = () => {
             {/* 左侧文案 */}
             <div>
               {/* Eyebrow 标签 */}
-              <a href="#catalog" className="inline-flex items-center gap-2.5 py-[5px] pl-[5px] pr-3.5 rounded-full bg-white/70 border border-white/90 text-[13px] text-[var(--txt-2)] font-medium mb-6 backdrop-blur-lg shadow-[0_1px_0_rgba(14,20,48,.03)] hover:shadow-[var(--shadow-sm)] transition-shadow">
+              <a href="/catalog" className="inline-flex items-center gap-2.5 py-[5px] pl-[5px] pr-3.5 rounded-full bg-white/70 border border-white/90 text-[13px] text-[var(--txt-2)] font-medium mb-6 backdrop-blur-lg shadow-[0_1px_0_rgba(14,20,48,.03)] hover:shadow-[var(--shadow-sm)] transition-shadow">
                 <span className="bg-gradient-to-br from-[var(--pri)] to-[var(--pri-2)] text-white px-2.5 py-[3px] rounded-full text-[11px] font-semibold tracking-wider">NEW</span>
                 <span>春季促销 · 全场异构算力 7 折起</span>
                 <span className="text-[var(--txt-3)] transition-transform group-hover:translate-x-0.5">→</span>

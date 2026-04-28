@@ -46,7 +46,7 @@ const Footer = () => {
               <ul className="flex flex-col gap-2.5">
                 {col.links.map((link) => (
                   <li key={link}>
-                    <a href="#" className="text-[13.5px] text-[#A0A6BE] hover:text-white transition-colors">{link}</a>
+                    <a href="/" className="text-[13.5px] text-[#A0A6BE] hover:text-white transition-colors">{link}</a>
                   </li>
                 ))}
               </ul>
@@ -85,9 +85,9 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center pt-[22px] border-t border-white/[.07] text-[12.5px] text-[#7E84A0] gap-3">
           <div>© 2026 睿思（RiseUnion）· RiseCloud 算力标准化平台</div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">服务协议</a>
-            <a href="#" className="hover:text-white transition-colors">隐私政策</a>
-            <a href="#" className="hover:text-white transition-colors">ICP 备案号 12345678</a>
+            <a href="/" className="hover:text-white transition-colors">服务协议</a>
+            <a href="/" className="hover:text-white transition-colors">隐私政策</a>
+            <a href="/" className="hover:text-white transition-colors">ICP 备案号 12345678</a>
           </div>
         </div>
       </div>
