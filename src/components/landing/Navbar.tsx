@@ -8,8 +8,8 @@ import { ArrowRight } from "lucide-react";
 
 /** 导航链接配置 */
 const navLinks = [
-  { label: "算力售卖", href: "/catalog" },
-  { label: "模型广场", href: "/models" },
+  { label: "算力服务", href: "https://console.riseaicloud.com" },
+  { label: "模型服务", href: "https://console.riseaicloud.com" },
   { label: "解决方案", href: "/solutions" },
   { label: "产品", href: "/products" },
   { label: "关于我们", href: "/about" },
