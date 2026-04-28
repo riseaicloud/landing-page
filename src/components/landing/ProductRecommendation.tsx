@@ -1,6 +1,6 @@
 /**
  * 产品推荐 - 算力售卖 + Token API
- * 9 张 GPU 卡片 (3x3) + 3 张模型 API 卡片
+ * 6 张 GPU 卡片 (3x2) + 3 张模型 API 卡片
  * 样式参考 Claude Design 导出的 .pcard 组件
  */
 
@@ -31,7 +31,7 @@ interface TokenProduct {
   specs: { key: string; val: string }[];
 }
 
-/** GPU 产品列表 */
+/** GPU 产品列表（精选 6 款） */
 const gpuProducts: GpuProduct[] = [
   {
     name: "NVIDIA A100", badge: "SXM4 80G", price: "2.86", unit: "/小时",
@@ -71,15 +71,6 @@ const gpuProducts: GpuProduct[] = [
     ],
   },
   {
-    name: "NVIDIA H20", badge: "8 卡整机", badgeType: "new",
-    price: "34000", unit: "/月", note: "8 × H20 · NVLink 全互联整机", cta: "咨询采购",
-    specs: [
-      { key: "GPU", val: "8 × H20 96G" }, { key: "CPU", val: "2 × Intel Xeon Platinum" },
-      { key: "内存", val: "2 TB DDR5" }, { key: "存储", val: "8 × 7.68 TB NVMe" },
-      { key: "网络", val: "8 × 400G IB · 双 100G 业务" },
-    ],
-  },
-  {
     name: "NVIDIA H100", badge: "8 卡整机", badgeType: "hot",
     price: "63000", unit: "/月", note: "大模型训练标杆 · 限量供应", cta: "咨询采购",
     specs: [
@@ -95,24 +86,6 @@ const gpuProducts: GpuProduct[] = [
       { key: "规格", val: "单卡 / 8 卡整机" }, { key: "显存", val: "64 GB HBM2e" },
       { key: "框架", val: "MindSpore / PyTorch (Ascend)" }, { key: "合规", val: "信创 · 等保三级" },
       { key: "交付", val: "公有云 / 私有化" },
-    ],
-  },
-  {
-    name: "NVIDIA A100", badge: "4 卡机", price: "16880", unit: "/月",
-    note: "中型训练 · 微调任务首选", cta: "立即购买",
-    specs: [
-      { key: "GPU", val: "4 × A100 80G" }, { key: "CPU", val: "2 × Intel Xeon Gold" },
-      { key: "内存", val: "512 GB" }, { key: "存储", val: "2 × 3.84 TB NVMe" },
-      { key: "网络", val: "2 × 200G IB" },
-    ],
-  },
-  {
-    name: "云服务器", badge: "通用", price: "808.11", unit: "/年",
-    note: "通用 ECS · 1 折抢购中", cta: "立即购买",
-    specs: [
-      { key: "CPU", val: "4 核 vCPU" }, { key: "内存", val: "8 GB" },
-      { key: "系统盘", val: "40 GB SSD" }, { key: "带宽", val: "5 Mbps" },
-      { key: "系统", val: "CentOS / Ubuntu / 麒麟" },
     ],
   },
 ];

@@ -9,10 +9,10 @@ import { ArrowRight } from "lucide-react";
 /** 导航链接配置 */
 const navLinks = [
   { label: "算力售卖", href: "#catalog" },
-  { label: "模型 API", href: "#tokens" },
-  { label: "产品优势", href: "#features" },
-  { label: "平台能力", href: "#platform" },
-  { label: "客户场景", href: "#audience" },
+  { label: "模型广场", href: "#tokens" },
+  { label: "解决方案", href: "#solutions" },
+  { label: "产品", href: "#products" },
+  { label: "关于我们", href: "#about" },
   { label: "开发者文档", href: "#docs" },
 ];
 
@@ -48,7 +48,7 @@ const Navbar = () => {
           <a href="#login" className="px-3.5 py-2 rounded-lg text-sm font-medium text-[var(--txt-2)] hover:text-[var(--txt)]">
             登录
           </a>
-          <Button variant="dark" size="sm" className="gap-2">
+          <Button variant="primary" size="sm" className="gap-2">
             控制台
             <ArrowRight className="w-3 h-3" />
           </Button>
