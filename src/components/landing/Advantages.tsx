@@ -1,77 +1,51 @@
-import { Cpu, Network, HardDrive, Expand, BookOpen, Headphones } from "lucide-react";
+import { DollarSign, LayoutGrid, ShieldCheck, Settings } from "lucide-react";
 
 /**
- * 产品优势区域
- * 6 个优势卡片，2行3列布局，每个带图标和描述
+ * 产品优势 - 4 列布局
+ * 价格优势 / 多元生态 / 稳定可靠 / 专业服务
  */
 
-/** 优势项配置 */
-const advantages = [
+const features = [
   {
-    icon: Cpu,
-    title: "史诗级算力",
-    description: "搭载最新 NVIDIA H100/A100 GPU，FP16 算力高达 1979 TFLOPS，满足大规模模型训练和推理需求。",
-    color: "text-blue-500 bg-blue-50",
+    icon: DollarSign,
+    title: "价格优势",
+    desc: "同规格 GPU 较公有云大厂便宜 30%–50%，包月、包年更优惠",
   },
   {
-    icon: Network,
-    title: "极高网络性能",
-    description: "IB 400Gbps 高速互联网络，支持 RDMA 通信，千卡级分布式训练延迟低至微秒级。",
-    color: "text-cyan-500 bg-cyan-50",
+    icon: LayoutGrid,
+    title: "多元生态",
+    desc: "NVIDIA、昇腾、海光、寒武纪等异构芯片统一纳管，一个平台全部支持",
   },
   {
-    icon: HardDrive,
-    title: "专属高速存储服务",
-    description: "NVMe SSD 本地存储 + 分布式高性能文件系统，顺序读写速度高达 7GB/s，满足海量数据吞吐。",
-    color: "text-green-500 bg-green-50",
+    icon: ShieldCheck,
+    title: "稳定可靠",
+    desc: "多集群冗余、故障自动迁移、SLA 99.9%，关键任务无忧",
   },
   {
-    icon: Expand,
-    title: "弹性扩容",
-    description: "分钟级实例创建与释放，灵活扩缩容，按需使用按量计费，资源利用率最大化。",
-    color: "text-purple-500 bg-purple-50",
-  },
-  {
-    icon: BookOpen,
-    title: "深度学习环境集成",
-    description: "预装 PyTorch、TensorFlow、CUDA 等主流框架，内置 Jupyter Notebook，开箱即用零配置。",
-    color: "text-orange-500 bg-orange-50",
-  },
-  {
-    icon: Headphones,
-    title: "高端专属服务",
-    description: "7×24 小时技术支持，专属客户经理一对一服务，SLA 99.9% 可用性保障。",
-    color: "text-rose-500 bg-rose-50",
+    icon: Settings,
+    title: "专业服务",
+    desc: "7×24 小时技术支持，资深 AI 工程师团队驻场协助调优",
   },
 ];
 
 const Advantages = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* 标题 */}
-        <div className="text-center mb-14">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
-            产品优势
-          </h2>
-          <p className="text-gray-500">
-            全方位技术能力，助力 AI 创新
-          </p>
+    <section className="py-20" id="features">
+      <div className="max-w-[1240px] mx-auto px-8">
+        <div className="text-center max-w-[680px] mx-auto mb-12">
+          <div className="inline-block text-[12px] text-[var(--pri)] uppercase tracking-[.18em] font-semibold mb-3.5">产品优势</div>
+          <h2 className="text-[clamp(26px,3.2vw,38px)] leading-[1.2] tracking-[-0.02em] font-bold mb-3.5">为什么选择 RiseCloud</h2>
+          <p className="text-[15.5px] leading-[1.7] text-[var(--txt-2)]">把异构硬件变成统一商品，把闲置资源变成可运营服务。</p>
         </div>
 
-        {/* 2x3 优势网格 */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {advantages.map((item) => (
-            <div
-              key={item.title}
-              className="group text-center"
-            >
-              {/* 图标 */}
-              <div className={`w-16 h-16 rounded-2xl ${item.color} grid place-items-center mx-auto mb-5`}>
-                <item.icon className="w-7 h-7" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((f) => (
+            <div key={f.title} className="text-center px-3 py-2">
+              <div className="w-12 h-12 rounded-[14px] mx-auto mb-3.5 bg-gradient-to-br from-white to-[#F0EDFF] border border-[var(--line)] grid place-items-center text-[var(--pri)] shadow-[var(--shadow-sm)]">
+                <f.icon className="w-[22px] h-[22px]" strokeWidth={1.7} />
               </div>
-              <h3 className="font-semibold text-lg text-gray-900 mb-3">{item.title}</h3>
-              <p className="text-sm text-gray-500 leading-relaxed max-w-xs mx-auto">{item.description}</p>
+              <h4 className="text-[15px] font-bold tracking-[-0.01em] mb-2 text-[var(--txt)]">{f.title}</h4>
+              <p className="text-[13px] text-[var(--txt-2)] leading-[1.6]">{f.desc}</p>
             </div>
           ))}
         </div>

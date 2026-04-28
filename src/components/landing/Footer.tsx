@@ -1,75 +1,93 @@
 /**
- * 页脚区域
- * 多列链接布局 + 底部版权信息
+ * 深色页脚
+ * 品牌 + 3 列链接 + 二维码 + 底部版权
  */
 
-/** 页脚链接列配置 */
 const columns = [
   {
-    title: "个人算力产品",
-    links: ["GPU容器机", "GPU裸金属", "云服务器"],
-  },
-  {
-    title: "企业算力产品",
-    links: ["私有化部署", "专属云", "智算集群"],
-  },
-  {
     title: "产品",
-    links: ["模型市场", "DeepSeek", "数据服务"],
+    links: ["GPU 容器", "虚拟集群", "模型 API", "Rise Router", "应用商店"],
   },
   {
-    title: "帮助",
-    links: ["帮助中心", "API文档", "计费说明", "联系我们"],
+    title: "开发者",
+    links: ["快速开始", "API 文档", "SDK", "价格", "状态页"],
+  },
+  {
+    title: "公司",
+    links: ["关于睿思", "客户案例", "合作伙伴", "招聘", "联系我们"],
   },
 ];
 
 const Footer = () => {
   return (
-    <footer className="bg-white border-t border-gray-100">
-      {/* Logo 区 */}
-      <div className="max-w-7xl mx-auto px-6 pt-12 pb-4">
-        <div className="flex items-center gap-2 mb-8">
-          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" className="shrink-0">
-            <rect width="28" height="28" rx="6" fill="#0088FF" />
-            <path d="M8 8h5v5H8V8zm7 0h5v5h-5V8zm-7 7h5v5H8v-5zm7 2.5a2.5 2.5 0 105 0 2.5 2.5 0 00-5 0z" fill="white" />
-          </svg>
-          <span className="text-base font-bold text-gray-900">
-            基石智算
-          </span>
-          <span className="text-xs text-gray-400 ml-1">CornerHub</span>
-        </div>
-      </div>
+    <footer className="bg-[#0E1430] text-[#A0A6BE] pt-14 pb-7 mt-10">
+      <div className="max-w-[1240px] mx-auto px-8">
+        {/* 网格：品牌 + 3列 + 二维码 */}
+        <div className="grid grid-cols-1 md:grid-cols-[1.5fr_repeat(3,1fr)_auto] gap-12 mb-9">
+          {/* 品牌 */}
+          <div>
+            <div className="flex items-center gap-2.5 mb-3">
+              <div className="w-[30px] h-[30px] rounded-[9px] bg-gradient-to-br from-[#5B5BFF] via-[#7A6BFF] to-[#A78BFA] grid place-items-center shadow-[0_6px_16px_-4px_rgba(91,91,255,.45)]">
+                <span className="text-white font-extrabold text-sm">R</span>
+              </div>
+              <span className="font-bold text-[17px] text-white">
+                Rise<span className="text-[#A78BFA]">Cloud</span>
+              </span>
+            </div>
+            <p className="text-[13px] text-[#7E84A0] leading-[1.65] max-w-[280px]">
+              睿思（RiseUnion）出品的算力标准化平台。让算力可管、可用、可交易。
+            </p>
+          </div>
 
-      {/* 链接列 */}
-      <div className="max-w-7xl mx-auto px-6 pb-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {/* 链接列 */}
           {columns.map((col) => (
             <div key={col.title}>
-              <h4 className="text-sm font-semibold text-gray-900 mb-4">{col.title}</h4>
-              <ul className="space-y-2.5">
+              <h5 className="text-[12px] text-white uppercase tracking-[.15em] font-semibold mb-4">{col.title}</h5>
+              <ul className="flex flex-col gap-2.5">
                 {col.links.map((link) => (
                   <li key={link}>
-                    <a href="#" className="text-sm text-gray-500 hover:text-blue-500 transition-colors">
-                      {link}
-                    </a>
+                    <a href="#" className="text-[13.5px] text-[#A0A6BE] hover:text-white transition-colors">{link}</a>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
-        </div>
-      </div>
 
-      {/* 底部版权 */}
-      <div className="border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-400">
-          <div>
-            版权所有 © 2026 基石智算科技有限公司 · 京ICP备XXXXXXXX号-1 · 京公网安备XXXXXXXXXXXXX号
+          {/* 二维码 */}
+          <div className="text-center">
+            <div className="w-24 h-24 rounded-[10px] bg-white grid place-items-center mx-auto">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+                <rect x="4" y="4" width="20" height="20" rx="2" stroke="#0E1430" strokeWidth="3" />
+                <rect x="48" y="4" width="20" height="20" rx="2" stroke="#0E1430" strokeWidth="3" />
+                <rect x="4" y="48" width="20" height="20" rx="2" stroke="#0E1430" strokeWidth="3" />
+                <rect x="10" y="10" width="8" height="8" fill="#0E1430" />
+                <rect x="54" y="10" width="8" height="8" fill="#0E1430" />
+                <rect x="10" y="54" width="8" height="8" fill="#0E1430" />
+                <rect x="30" y="10" width="4" height="4" fill="#0E1430" />
+                <rect x="38" y="14" width="4" height="4" fill="#0E1430" />
+                <rect x="32" y="22" width="4" height="4" fill="#0E1430" />
+                <rect x="42" y="28" width="4" height="4" fill="#0E1430" />
+                <rect x="30" y="36" width="6" height="6" fill="#0E1430" />
+                <rect x="42" y="42" width="4" height="4" fill="#0E1430" />
+                <rect x="50" y="38" width="4" height="4" fill="#0E1430" />
+                <rect x="58" y="44" width="6" height="6" fill="#0E1430" />
+                <rect x="32" y="48" width="4" height="4" fill="#0E1430" />
+                <rect x="42" y="56" width="4" height="4" fill="#0E1430" />
+                <rect x="52" y="60" width="4" height="4" fill="#0E1430" />
+                <rect x="60" y="54" width="4" height="4" fill="#0E1430" />
+              </svg>
+            </div>
+            <p className="text-[11.5px] mt-2 text-[#7E84A0]">关注公众号</p>
           </div>
-          <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-gray-600">隐私协议</a>
-            <a href="#" className="hover:text-gray-600">服务条款</a>
-            <a href="#" className="hover:text-gray-600">使用条款</a>
+        </div>
+
+        {/* 底部 */}
+        <div className="flex flex-col sm:flex-row justify-between items-center pt-[22px] border-t border-white/[.07] text-[12.5px] text-[#7E84A0] gap-3">
+          <div>© 2026 睿思（RiseUnion）· RiseCloud 算力标准化平台</div>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white transition-colors">服务协议</a>
+            <a href="#" className="hover:text-white transition-colors">隐私政策</a>
+            <a href="#" className="hover:text-white transition-colors">ICP 备案号 12345678</a>
           </div>
         </div>
       </div>
