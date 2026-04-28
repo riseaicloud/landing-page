@@ -231,7 +231,7 @@ const Solutions = () => {
             <p className="text-lg text-white/70 mt-4 font-light">强大、全面、专业的 AI 算力云服务，加速业务创新之旅！</p>
           </div>
           <div className="flex gap-3 shrink-0">
-            <a href="https://console.riseaicloud.com">
+            <a href="https://console.cloud.tkeel.io">
               <Button variant="ghost" className="bg-white text-[var(--txt)] hover:bg-white/90 font-medium px-6 py-3 h-auto rounded-lg gap-2">
                 立即使用 <ArrowRight className="w-3.5 h-3.5" />
               </Button>

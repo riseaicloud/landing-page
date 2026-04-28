@@ -8,8 +8,8 @@ import { ArrowRight } from "lucide-react";
 
 /** 导航链接配置 */
 const navLinks = [
-  { label: "算力服务", href: "https://console.riseaicloud.com" },
-  { label: "模型服务", href: "https://console.riseaicloud.com" },
+  { label: "算力服务", href: "https://console.cloud.tkeel.io" },
+  { label: "模型服务", href: "https://console.cloud.tkeel.io" },
   { label: "解决方案", href: "/solutions" },
   { label: "产品", href: "/products" },
   { label: "关于我们", href: "/about" },
