@@ -4,60 +4,50 @@ import { ArrowRight } from "lucide-react";
 /**
  * Hero 区域
  * 深色背景 + 流动光效动画 + 居中文案
- * 参考仙宫云风格：深色底、流动渐变光斑、简洁文案、双 CTA
+ * 多层光斑以不同速率大幅漂移，blur 适中，确保肉眼可见流动感
  */
+
+/** 光斑配置 */
+const orbs = [
+  { w: 500, h: 400, color: "#5B5BFF", opacity: 0.5,  blur: 60,  top: "-5%",  left: "5%",   anim: "animate-hero-drift-1" },
+  { w: 400, h: 350, color: "#A78BFA", opacity: 0.35, blur: 50,  top: "50%",  left: "60%",  anim: "animate-hero-drift-2" },
+  { w: 350, h: 300, color: "#FF6FA8", opacity: 0.3,  blur: 45,  top: "10%",  left: "70%",  anim: "animate-hero-drift-3" },
+  { w: 300, h: 250, color: "#22C58E", opacity: 0.25, blur: 40,  top: "60%",  left: "15%",  anim: "animate-hero-drift-4" },
+  { w: 250, h: 200, color: "#7A6BFF", opacity: 0.3,  blur: 35,  top: "30%",  left: "40%",  anim: "animate-hero-drift-1", delay: "3s" },
+  { w: 200, h: 180, color: "#FF6FA8", opacity: 0.2,  blur: 30,  top: "70%",  left: "80%",  anim: "animate-hero-drift-3", delay: "5s" },
+];
 
 const Hero = () => {
   return (
     <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden pt-16">
-      {/* 深色背景底色 */}
-      <div className="absolute inset-0 bg-[#0A0E27]" />
+      {/* 深色背景 */}
+      <div className="absolute inset-0 bg-[#080C22]" />
 
-      {/* 流动渐变光斑 - 多层叠加 */}
-      <div
-        className="absolute w-[800px] h-[600px] opacity-40 blur-[120px]"
-        style={{
-          background: "radial-gradient(ellipse, #5B5BFF 0%, transparent 70%)",
-          top: "-10%",
-          left: "10%",
-          animation: "drift1 12s ease-in-out infinite",
-        }}
-      />
-      <div
-        className="absolute w-[600px] h-[500px] opacity-30 blur-[100px]"
-        style={{
-          background: "radial-gradient(ellipse, #A78BFA 0%, transparent 70%)",
-          bottom: "-15%",
-          right: "5%",
-          animation: "drift2 10s ease-in-out infinite",
-        }}
-      />
-      <div
-        className="absolute w-[500px] h-[400px] opacity-25 blur-[80px]"
-        style={{
-          background: "radial-gradient(ellipse, #FF6FA8 0%, transparent 70%)",
-          top: "20%",
-          right: "25%",
-          animation: "drift3 14s ease-in-out infinite",
-        }}
-      />
-      <div
-        className="absolute w-[400px] h-[300px] opacity-20 blur-[90px]"
-        style={{
-          background: "radial-gradient(ellipse, #22C58E 0%, transparent 70%)",
-          bottom: "10%",
-          left: "30%",
-          animation: "drift4 11s ease-in-out infinite",
-        }}
-      />
+      {/* 流动光斑 */}
+      {orbs.map((orb, i) => (
+        <div
+          key={i}
+          className={`absolute rounded-full ${orb.anim}`}
+          style={{
+            width: orb.w,
+            height: orb.h,
+            background: `radial-gradient(circle, ${orb.color} 0%, transparent 70%)`,
+            opacity: orb.opacity,
+            filter: `blur(${orb.blur}px)`,
+            top: orb.top,
+            left: orb.left,
+            animationDelay: orb.delay || "0s",
+          }}
+        />
+      ))}
 
-      {/* 网格线叠加 */}
+      {/* 网格线 */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.035]"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px)
+            linear-gradient(rgba(255,255,255,.4) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,.4) 1px, transparent 1px)
           `,
           backgroundSize: "60px 60px",
         }}
@@ -79,7 +69,7 @@ const Hero = () => {
           弹性计费，秒级部署
         </p>
 
-        {/* CTA 按钮 */}
+        {/* CTA */}
         <div className="flex gap-4 justify-center flex-wrap mb-12">
           <Button variant="primary" size="lg" className="gap-2 text-[15px] px-8 h-[52px]">
             即刻开始
@@ -102,29 +92,6 @@ const Hero = () => {
           ))}
         </div>
       </div>
-
-      {/* CSS keyframes for flowing effect */}
-      <style>{`
-        @keyframes drift1 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(60px, 30px) scale(1.1); }
-          66% { transform: translate(-40px, -20px) scale(0.95); }
-        }
-        @keyframes drift2 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(-50px, -40px) scale(1.05); }
-          66% { transform: translate(30px, 20px) scale(1.1); }
-        }
-        @keyframes drift3 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          50% { transform: translate(40px, -30px) scale(1.15); }
-        }
-        @keyframes drift4 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          40% { transform: translate(-30px, 25px) scale(1.08); }
-          80% { transform: translate(20px, -15px) scale(0.92); }
-        }
-      `}</style>
     </section>
   );
 };

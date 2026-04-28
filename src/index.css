@@ -117,4 +117,36 @@
   .animate-float-up {
     animation: float-up 0.65s ease-out backwards;
   }
+
+  /* Hero 流动光斑动画 — 大幅位移确保肉眼可见 */
+  @keyframes hero-drift-1 {
+    0%   { transform: translate(0, 0) scale(1); }
+    20%  { transform: translate(160px, 80px) scale(1.2); }
+    50%  { transform: translate(-60px, 120px) scale(1.05); }
+    70%  { transform: translate(-120px, -40px) scale(0.9); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+  @keyframes hero-drift-2 {
+    0%   { transform: translate(0, 0) scale(1); }
+    30%  { transform: translate(-140px, -100px) scale(1.15); }
+    60%  { transform: translate(100px, 60px) scale(1.25); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+  @keyframes hero-drift-3 {
+    0%   { transform: translate(0, 0) scale(1); }
+    35%  { transform: translate(120px, -80px) scale(1.3); }
+    65%  { transform: translate(-80px, 60px) scale(0.85); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+  @keyframes hero-drift-4 {
+    0%   { transform: translate(0, 0) scale(1); }
+    25%  { transform: translate(-100px, 80px) scale(1.2); }
+    55%  { transform: translate(80px, -60px) scale(0.85); }
+    80%  { transform: translate(40px, 40px) scale(1.1); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+  .animate-hero-drift-1 { animation: hero-drift-1 8s ease-in-out infinite; }
+  .animate-hero-drift-2 { animation: hero-drift-2 10s ease-in-out infinite; }
+  .animate-hero-drift-3 { animation: hero-drift-3 12s ease-in-out infinite; }
+  .animate-hero-drift-4 { animation: hero-drift-4 9s ease-in-out infinite; }
 }
