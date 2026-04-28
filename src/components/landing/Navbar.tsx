@@ -18,7 +18,7 @@ const navLinks = [
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl backdrop-saturate-150 bg-[rgba(244,246,251,.78)] border-b border-[rgba(14,20,48,.05)]">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[var(--line)]">
       <div className="max-w-[1240px] mx-auto px-8 h-16 flex items-center justify-between">
         {/* 品牌 */}
         <a href="/" className="flex items-center gap-2.5">
