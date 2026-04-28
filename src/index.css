@@ -2,57 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Iridescent Grid — Compute platform design system. All colors HSL. */
+/* RiseCloud — Indigo-primary design system from Claude Design handoff */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    --background: 240 33% 99%;
-    --foreground: 240 30% 12%;
+    --background: 228 33% 97%;
+    --foreground: 230 60% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 30% 12%;
+    --card-foreground: 230 60% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 30% 12%;
+    --popover-foreground: 230 60% 12%;
 
-    /* Brand: deep iris blue */
-    --primary: 245 70% 55%;
+    /* Brand: indigo */
+    --primary: 240 100% 68%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 265 80% 65%;
 
-    /* Secondary: magenta accent */
-    --secondary: 320 75% 65%;
-    --secondary-foreground: 0 0% 100%;
+    /* Accent: pink hot */
+    --accent-pink: 340 100% 72%;
 
-    --muted: 240 20% 96%;
-    --muted-foreground: 240 10% 45%;
+    --secondary: 228 20% 96%;
+    --secondary-foreground: 228 14% 46%;
 
-    --accent: 30 95% 65%;
-    --accent-foreground: 240 30% 12%;
+    --muted: 228 14% 96%;
+    --muted-foreground: 228 14% 46%;
+
+    --accent: 228 20% 96%;
+    --accent-foreground: 230 60% 12%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 20% 92%;
-    --input: 240 20% 92%;
-    --ring: 245 70% 55%;
+    --border: 228 16% 91%;
+    --input: 228 16% 91%;
+    --ring: 240 100% 68%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Iridescent gradient */
-    --gradient-iridescent: linear-gradient(135deg, hsl(245 75% 60%) 0%, hsl(280 80% 65%) 35%, hsl(320 80% 68%) 65%, hsl(30 90% 68%) 100%);
-    --gradient-iridescent-soft: linear-gradient(135deg, hsl(245 75% 60% / 0.15), hsl(320 80% 68% / 0.15) 50%, hsl(30 90% 68% / 0.15));
-    --gradient-glow: radial-gradient(circle at center, hsl(280 80% 70% / 0.35), transparent 70%);
+    /* Design tokens */
+    --bg: #F4F6FB;
+    --bg-soft: #EEF1F8;
+    --surface: #FFFFFF;
+    --line: #E7EAF2;
+    --line-2: #D8DCE8;
+    --txt: #0E1430;
+    --txt-2: #4A5170;
+    --txt-3: #7A8198;
+    --txt-4: #A6ACBE;
+    --pri: #5B5BFF;
+    --pri-2: #7A6BFF;
+    --pri-3: #A78BFA;
+    --pri-soft: #EFEEFF;
+    --pri-line: #D6D3FF;
+    --acc: #FF6FA8;
+    --acc-soft: #FFE9F2;
+    --green: #22C58E;
+    --green-soft: #E2F8EF;
+    --amber: #F4B740;
 
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(245 50% 30% / 0.08);
-    --shadow-elevated: 0 20px 50px -20px hsl(245 60% 30% / 0.25);
-    --shadow-glow: 0 10px 40px -10px hsl(265 80% 60% / 0.4);
+    --shadow-sm: 0 1px 2px rgba(14,20,48,.04), 0 1px 1px rgba(14,20,48,.03);
+    --shadow-md: 0 4px 16px -4px rgba(14,20,48,.08), 0 2px 6px -2px rgba(14,20,48,.04);
+    --shadow-lg: 0 24px 60px -20px rgba(14,20,48,.18), 0 8px 24px -8px rgba(14,20,48,.08);
 
-    /* Grid pattern */
-    --grid-line: hsl(240 15% 88% / 0.6);
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: 'Inter Tight', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -63,97 +79,42 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
 }
 
 @layer base {
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
-    font-feature-settings: "ss01", "cv11";
+    background: var(--bg);
+    color: var(--txt);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  ::selection {
+    background: var(--pri);
+    color: #fff;
   }
 }
 
 @layer utilities {
-  .font-mono-tech {
-    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  .font-mono-code {
+    font-family: var(--mono);
   }
 
-  .text-iridescent {
-    background: var(--gradient-iridescent);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  @keyframes spin-slow {
+    to { transform: rotate(360deg); }
   }
-
-  .bg-iridescent {
-    background: var(--gradient-iridescent);
+  .animate-spin-slow {
+    animation: spin-slow 6s linear infinite;
   }
-
-  .bg-iridescent-soft {
-    background: var(--gradient-iridescent-soft);
-  }
-
-  .bg-grid {
-    background-image:
-      repeating-linear-gradient(0deg, var(--grid-line) 0 1px, transparent 1px 24px),
-      repeating-linear-gradient(90deg, var(--grid-line) 0 1px, transparent 1px 24px);
-  }
-
-  .shadow-soft { box-shadow: var(--shadow-soft); }
-  .shadow-elevated { box-shadow: var(--shadow-elevated); }
-  .shadow-glow { box-shadow: var(--shadow-glow); }
-
-  @keyframes pulse-glow {
-    0%, 100% { opacity: 0.4; transform: scale(1); }
-    50% { opacity: 0.7; transform: scale(1.05); }
-  }
-  .animate-pulse-glow { animation: pulse-glow 6s ease-in-out infinite; }
 
   @keyframes float-up {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  .animate-float-up { animation: float-up 0.8s ease-out backwards; }
+  .animate-float-up {
+    animation: float-up 0.65s ease-out backwards;
+  }
 }

@@ -5,25 +5,25 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-[var(--pri)] text-white hover:opacity-90",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        secondary: "bg-white text-[var(--txt)] border border-[var(--line-2)] hover:border-[var(--line-3)] hover:bg-[#F8F9FC]",
         ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        iridescent:
-          "bg-iridescent text-primary-foreground shadow-glow hover:opacity-90 hover:-translate-y-0.5 transition-all duration-300",
-        outlineGlow:
-          "border border-primary/40 text-primary bg-background hover:bg-primary/5 hover:border-primary transition-all duration-300",
+        link: "text-[var(--pri)] underline-offset-4 hover:underline",
+        /** 主 CTA：indigo 渐变 */
+        primary: "bg-gradient-to-br from-[var(--pri)] to-[var(--pri-2)] text-white shadow-[0_8px_18px_-6px_rgba(91,91,255,.5)] hover:-translate-y-0.5 hover:shadow-[0_12px_22px_-6px_rgba(91,91,255,.55)]",
+        /** 深色按钮 */
+        dark: "bg-[#0E1430] text-white hover:bg-[#1B2148] hover:-translate-y-0.5",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
+        default: "h-11 px-[22px] py-[11px]",
+        sm: "h-9 px-4",
+        lg: "h-12 px-8 text-[15px]",
         icon: "h-10 w-10",
       },
     },
