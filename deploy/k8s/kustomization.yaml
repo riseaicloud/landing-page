@@ -9,4 +9,4 @@ resources:
 
 images:
   - name: ghcr.io/riseaicloud/landing-page
-    newTag: 3b38596eedf393a473d692d939dd32c8943b8cf4
+    newTag: 0b2b143a81d04a1bfc2945d5b9f5e0f8df428ee7
