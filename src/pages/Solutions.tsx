@@ -68,11 +68,11 @@ const values = [
     ],
   },
   {
-    role: "对于算法工程师",
+    role: "对于业务决策者",
     points: [
-      "弹性计算，创新无忧：提供弹性便捷的计算环境，专注于算法本身的优化与创新。",
-      "加速迭代，快速落地：全流程优化助力高效推进项目，从模型训练到部署，加速产品上线。",
-      "稳定支撑，安心创新：多节点协同与高效调度算法，确保系统高负载下的稳定运行。",
+      "算力资产可视化：清晰掌握 GPU 资源利用率、租户分布与营收数据，支撑运营决策。",
+      "快速商业化落地：内置计量计费、多租户隔离、配额管理，开箱即用，缩短上线周期。",
+      "生态兼容，降低风险：支持 NVIDIA、昇腾、海光等多芯片，避免单一厂商锁定。",
     ],
   },
 ];
@@ -227,13 +227,13 @@ const Solutions = () => {
       <section className="py-20" style={{ background: "linear-gradient(92deg, #7A6BFF 12%, var(--pri) 55%, #3040AA 97%)" }}>
         <div className="max-w-[1240px] mx-auto px-8 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8">
           <div>
-            <h2 className="text-2xl lg:text-4xl text-white font-medium">立刻开启算力使用</h2>
-            <p className="text-lg text-white/70 mt-4 font-light">强大、全面、专业的 AI 算力云服务，加速业务创新之旅！</p>
+            <h2 className="text-2xl lg:text-4xl text-white font-medium">让你的算力资源开始创造价值</h2>
+            <p className="text-lg text-white/70 mt-4 font-light">部署 RiseCloud 平台，将闲置 GPU 变成可运营、可计费、可扩展的算力服务。</p>
           </div>
           <div className="flex gap-3 shrink-0">
             <a href="https://console.cloud.tkeel.io">
               <Button variant="ghost" className="bg-white text-[var(--txt)] hover:bg-white/90 font-medium px-6 py-3 h-auto rounded-lg gap-2">
-                立即使用 <ArrowRight className="w-3.5 h-3.5" />
+                预约演示 <ArrowRight className="w-3.5 h-3.5" />
               </Button>
             </a>
             <Button variant="ghost" className="text-white border border-white/40 hover:bg-white/10 font-medium px-6 py-3 h-auto rounded-lg gap-2">

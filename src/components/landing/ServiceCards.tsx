@@ -39,7 +39,7 @@ const ServiceCards = () => {
               `,
             }}
           >
-            <h2 className="text-[clamp(26px,3.2vw,36px)] tracking-[-0.02em] font-bold mb-3 leading-[1.2]">开始把算力变成可运营的服务</h2>
+            <h2 className="text-[clamp(26px,3.2vw,36px)] tracking-[-0.02em] font-bold mb-3 leading-[1.2]">即刻开始，获取你需要的算力</h2>
             <p className="text-[var(--txt-2)] text-[15.5px] max-w-[520px] mx-auto mb-7 leading-[1.7]">
               注册即获 ¥100 免费额度，体验 GPU 容器与模型推理 API。预约方案咨询，30 分钟内回复。
             </p>

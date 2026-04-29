@@ -35,7 +35,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-[13px] text-[#7E84A0] leading-[1.65] max-w-[280px]">
-              睿思（RiseUnion）出品的算力标准化平台。让算力可管、可用、可交易。
+              睿思（RiseUnion）出品的算力云平台。按需获取 GPU 算力与模型服务。
             </p>
           </div>
 
